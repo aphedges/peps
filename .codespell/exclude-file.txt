@@ -19,3 +19,5 @@ explicitly declared using ``in``, ``out`` and ``inout`` keywords.
     >>> "abd\
 
   * ``Is``, ``IsNot``, ``In``, and ``NotIn`` are not supported
+
+CAM Gerlach, Arie Bovenberg, David Foster, and Shengye Wan

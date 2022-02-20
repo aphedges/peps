@@ -2,4 +2,4 @@
 skip = ./.git,./.codespellrc,./build,./ruff_cache,./.venv
 ignore-words = .codespell/ignore-words.txt
 exclude-file = .codespell/exclude-file.txt
-uri-ignore-words-list = daa,ist,searchin,theses
+uri-ignore-words-list = daa,ist,pullrequest,searchin,theses

@@ -7,6 +7,7 @@ asend
 ba
 ccompiler
 checkin
+circularly
 clos
 complies
 crate
