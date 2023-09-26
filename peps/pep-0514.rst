@@ -82,7 +82,9 @@ Structure
 We consider there to be a single collection of Python environments on a machine,
 where the collection may be different for each user of the machine. There are
 three potential registry locations where the collection may be stored based on
-the installation options of each environment::
+the installation options of each environment:
+
+.. code-block:: text
 
     HKEY_CURRENT_USER\Software\Python\<Company>\<Tag>
     HKEY_LOCAL_MACHINE\Software\Python\<Company>\<Tag>
@@ -134,7 +136,9 @@ installations of both 32-bit and 64-bit interpreters under this scheme since it
 would result in duplicate Tags.
 
 To ensure backwards compatibility, applications should treat environments listed
-under the following two registry keys as distinct, even when the Tag matches::
+under the following two registry keys as distinct, even when the Tag matches:
+
+.. code-block:: text
 
     HKEY_LOCAL_MACHINE\Software\Python\PythonCore\<Tag>
     HKEY_LOCAL_MACHINE\Software\Wow6432Node\Python\PythonCore\<Tag>
@@ -165,7 +169,9 @@ Company
 The Company part of the key is intended to group related environments and to
 ensure that Tags are namespaced appropriately. The key name should be
 alphanumeric without spaces and likely to be unique. For example, a trademarked
-name (preferred), a hostname, or as a last resort, a UUID would be appropriate::
+name (preferred), a hostname, or as a last resort, a UUID would be appropriate:
+
+.. code-block:: text
 
     HKEY_CURRENT_USER\Software\Python\ExampleCorp
     HKEY_CURRENT_USER\Software\Python\www.example.com
@@ -183,7 +189,9 @@ If a string value named ``SupportUrl`` exists, it may be displayed or otherwise
 used to direct users to a web site related to the environment. (For
 ``PythonCore``, the default support URL is "http://www.python.org/".)
 
-A complete example may look like::
+A complete example may look like:
+
+.. code-block:: text
 
     HKEY_CURRENT_USER\Software\Python\ExampleCorp
         (Default) = (value not set)
@@ -198,7 +206,9 @@ those provided by a single company. The key name should be alphanumeric without
 spaces and stable across installations. For example, the Python language
 version, a UUID or a partial/complete hash would be appropriate, while a Tag
 based on the install directory or some aspect of the current machine may not.
-For example::
+For example:
+
+.. code-block:: text
 
     HKEY_CURRENT_USER\Software\Python\ExampleCorp\examplepy
     HKEY_CURRENT_USER\Software\Python\ExampleCorp\3.6
@@ -239,7 +249,9 @@ registered under ``HKEY_CURRENT_USER``.)
 
 Note that each of these values is recommended, but optional. Omitting
 ``SysVersion`` or ``SysArchitecture`` may prevent some tools from correctly
-supporting the environment. A complete example may look like this::
+supporting the environment. A complete example may look like this:
+
+.. code-block:: text
 
     HKEY_CURRENT_USER\Software\Python\ExampleCorp\examplepy
         (Default) = (value not set)
@@ -253,7 +265,9 @@ InstallPath
 -----------
 
 Beneath the environment key, an ``InstallPath`` key must be created. This key is
-always named ``InstallPath``, and the default value must match ``sys.prefix``::
+always named ``InstallPath``, and the default value must match ``sys.prefix``:
+
+.. code-block:: text
 
     HKEY_CURRENT_USER\Software\Python\ExampleCorp\3.6\InstallPath
         (Default) = "C:\ExampleCorpPy36"
@@ -279,7 +293,9 @@ the value as the first arguments when executing ``WindowedExecutablePath``.
 Tools may add other arguments following these, and will reasonably expect
 standard Python command line options to be available.
 
-A complete example may look like::
+A complete example may look like:
+
+.. code-block:: text
 
     HKEY_CURRENT_USER\Software\Python\ExampleCorp\examplepy\InstallPath
         (Default) = "C:\ExampleDistro30"
@@ -301,7 +317,9 @@ string appropriate for passing to ``os.startfile`` or equivalent.
 If a string value named ``DisplayName`` exists, it should be used to identify
 the help file to users. Otherwise, the key name should be used.
 
-A complete example may look like::
+A complete example may look like:
+
+.. code-block:: text
 
     HKEY_CURRENT_USER\Software\Python\ExampleCorp\6C465E66\Help
         Python\
@@ -445,7 +463,9 @@ do not have any default values::
             print()
 
 This example shows a subset of the registration that will be created by a
-just-for-me install of 64-bit Python 3.6.0. Other keys may also be created::
+just-for-me install of 64-bit Python 3.6.0. Other keys may also be created:
+
+.. code-block:: text
 
     HKEY_CURRENT_USER\Software\Python\PythonCore
         (Default) = (value not set)
