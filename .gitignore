@@ -17,6 +17,9 @@ __pycache__
 # Tests
 coverage.xml
 .coverage
+htmlcov
+.pytest_cache
+.ruff_cache
 .tox
 
 # Virtual environments
