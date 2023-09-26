@@ -67,9 +67,9 @@ write code such as::
                     __future__.generators.compiler_flag)
 
 A recent change means that these same bits can be used to tell if
-a code object was compiled with a given feature; for instance ::
+a code object was compiled with a given feature; for instance::
 
-   codeob.co_flags & __future__.generators.compiler_flag``
+   codeob.co_flags & __future__.generators.compiler_flag
 
 will be non-zero if and only if the code object "codeob" was
 compiled in an environment where generators were allowed.
