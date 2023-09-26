@@ -2,7 +2,7 @@
 
 # You can set these variables from the command line.
 PYTHON       = python3
-VENVDIR      = .venv
+VENVDIR      ?= .venv
 UV           = uv
 # synchronise with render.yml -> deploy step
 BUILDDIR     = build
