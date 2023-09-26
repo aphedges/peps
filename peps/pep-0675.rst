@@ -608,7 +608,7 @@ can provide similar safety guarantees with fewer restrictions.
 
 **Semgrep and pyanalyze**: Semgrep supports a more sophisticated
 function level analysis, including `constant propagation
-<https://semgrep.dev/docs/writing-rules/data-flow/#constant-propagation>`_
+<https://semgrep.dev/docs/writing-rules/data-flow/constant-propagation/>`_
 within a function. This allows us to prevent injection attacks while
 permitting some forms of safe dynamic SQL queries within a
 function. `pyanalyze
@@ -720,7 +720,7 @@ Why not try to emulate Trusted Types?
 -------------------------------------
 
 `Trusted Types
-<https://w3c.github.io/webappsec-trusted-types/dist/spec/>`_ is a W3C
+<https://w3c.github.io/trusted-types/dist/spec/>`_ is a W3C
 specification for preventing DOM-based Cross Site Scripting (XSS). XSS
 occurs when dangerous browser APIs accept raw user-controlled
 strings. The specification modifies these APIs to accept only the
