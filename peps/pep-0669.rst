@@ -254,35 +254,35 @@ Different events will provide the callback function with different arguments, as
 
     func(code: CodeType, instruction_offset: int) -> DISABLE | Any
 
-* ``PY_RETURN`` and ``PY_YIELD``:
+* ``PY_RETURN`` and ``PY_YIELD``::
 
-    ``func(code: CodeType, instruction_offset: int, retval: object) -> DISABLE | Any``
+    func(code: CodeType, instruction_offset: int, retval: object) -> DISABLE | Any
 
-* ``CALL``, ``C_RAISE`` and ``C_RETURN``:
+* ``CALL``, ``C_RAISE`` and ``C_RETURN``::
 
-    ``func(code: CodeType, instruction_offset: int, callable: object, arg0: object | MISSING) -> DISABLE | Any``
+    func(code: CodeType, instruction_offset: int, callable: object, arg0: object | MISSING) -> DISABLE | Any
 
-    If there are no arguments, ``arg0`` is set to ``MISSING``.
+  If there are no arguments, ``arg0`` is set to ``MISSING``.
 
-* ``RAISE`` and ``EXCEPTION_HANDLED``:
+* ``RAISE`` and ``EXCEPTION_HANDLED``::
 
-    ``func(code: CodeType, instruction_offset: int, exception: BaseException) -> DISABLE | Any``
+    func(code: CodeType, instruction_offset: int, exception: BaseException) -> DISABLE | Any
 
-* ``LINE``:
+* ``LINE``::
 
-    ``func(code: CodeType, line_number: int) -> DISABLE | Any``
+    func(code: CodeType, line_number: int) -> DISABLE | Any
 
-* ``BRANCH``:
+* ``BRANCH``::
 
-    ``func(code: CodeType, instruction_offset: int, destination_offset: int) -> DISABLE | Any``
+    func(code: CodeType, instruction_offset: int, destination_offset: int) -> DISABLE | Any
 
   Note that the ``destination_offset`` is where the code will next execute.
   For an untaken branch this will be the offset of the instruction following
   the branch.
 
-* ``INSTRUCTION``:
+* ``INSTRUCTION``::
 
-    ``func(code: CodeType, instruction_offset: int) -> DISABLE | Any``
+    func(code: CodeType, instruction_offset: int) -> DISABLE | Any
 
 
 If a callback function returns ``DISABLE``, then that function will no longer
